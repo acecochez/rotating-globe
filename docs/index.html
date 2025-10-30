@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Interactive Globe</title>
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div class="menu-container">
+        <button class="menu-button" id="menu-toggle">Menu</button>
+        <nav class="menu-nav" id="menu-nav">
+            <a href="../globe/index.html" class="menu-item">Globe</a>
+            <a href="index.html" class="menu-item">Docs</a>
+            <a href="../author/index.html" class="menu-item">Author</a>
+        </nav>
+    </div>
+
+    <div class="docs-container">
+        <header class="docs-header">
+            <h1>Documentation</h1>
+            <p class="subtitle">Interactive Rotating Globe</p>
+        </header>
+
+        <main class="docs-content">
+            <section class="docs-section">
+                <h2>Overview</h2>
+                <p>The Interactive Rotating Globe is a web-based visualization tool that allows users to explore countries and continents through an interactive 3D globe interface. Built with D3.js and modern web technologies, it provides an engaging way to navigate geographical data.</p>
+            </section>
+
+            <section class="docs-section">
+                <h2>Features</h2>
+                <ul>
+                    <li><strong>Interactive 3D Globe:</strong> A spherical projection of the world using D3.js geoOrthographic projection</li>
+                    <li><strong>Country Selection:</strong> Choose any country from the dropdown menu or click directly on the globe</li>
+                    <li><strong>Smooth Rotation:</strong> Animated transitions when rotating to a selected country</li>
+                    <li><strong>Continent Highlighting:</strong> When a country is selected, all countries in the same continent are highlighted</li>
+                    <li><strong>Country Labels:</strong> Display names of countries within the same continent as the selected country</li>
+                    <li><strong>Manual Rotation:</strong> Drag the globe to rotate it manually and explore different regions</li>
+                    <li><strong>Dynamic Background:</strong> The globe background brightens when a country is selected</li>
+                </ul>
+            </section>
+
+            <section class="docs-section">
+                <h2>How to Use</h2>
+                <div class="step">
+                    <h3>1. Select a Country</h3>
+                    <p>Use the dropdown menu on the right side of the globe to choose a country, or click directly on any country on the globe itself.</p>
+                </div>
+                <div class="step">
+                    <h3>2. View Continent</h3>
+                    <p>Once selected, the globe will rotate to center on your chosen country. The selected country appears in bright green, while other countries in the same continent are highlighted in a darker green shade.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Explore Manually</h3>
+                    <p>Click and drag anywhere on the globe to rotate it manually. This allows you to explore different regions at your own pace.</p>
+                </div>
+                <div class="step">
+                    <h3>4. Reset View</h3>
+                    <p>Select "Choose a country..." from the dropdown to return the globe to its default position and clear all highlights.</p>
+                </div>
+            </section>
+
+            <section class="docs-section">
+                <h2>Technical Details</h2>
+                <div class="tech-item">
+                    <h3>Technology Stack</h3>
+                    <ul>
+                        <li><strong>D3.js v7:</strong> Data visualization and geographic projections</li>
+                        <li><strong>TopoJSON:</strong> Efficient geographic data format</li>
+                        <li><strong>SVG:</strong> Scalable vector graphics for rendering</li>
+                        <li><strong>Vanilla JavaScript:</strong> Core interaction logic</li>
+                    </ul>
+                </div>
+                <div class="tech-item">
+                    <h3>Key Components</h3>
+                    <ul>
+                        <li><strong>Projection:</strong> d3.geoOrthographic() creates the spherical Earth view</li>
+                        <li><strong>Path Generator:</strong> Converts GeoJSON data to SVG paths</li>
+                        <li><strong>Graticule:</strong> Displays longitude and latitude grid lines</li>
+                        <li><strong>Drag Behavior:</strong> Enables interactive rotation of the globe</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="docs-section">
+                <h2>Color Scheme</h2>
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #1a1a2e;"></div>
+                        <p><strong>Outer Space:</strong> #1a1a2e</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #03254E;"></div>
+                        <p><strong>Dark Sea:</strong> #03254E</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #0A100D;"></div>
+                        <p><strong>Midnight Pine:</strong> #0A100D</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #45653E;"></div>
+                        <p><strong>Faded Land:</strong> #45653E</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #7DC95E;"></div>
+                        <p><strong>Simmered Lime:</strong> #7DC95E</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background: #477998;"></div>
+                        <p><strong>Sky Light:</strong> #477998</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="docs.js"></script>
+</body>
+</html>

@@ -211,3 +211,18 @@ const drag = d3.drag()
     });
 
 svg.call(drag);
+
+// Menu toggle functionality
+const menuToggle = document.getElementById('menu-toggle');
+const menuNav = document.getElementById('menu-nav');
+
+menuToggle.addEventListener('click', () => {
+    menuNav.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('.menu-container')) {
+        menuNav.classList.remove('active');
+    }
+});
