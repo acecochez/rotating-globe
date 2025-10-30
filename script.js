@@ -3,22 +3,18 @@ const width = 800;
 const height = 800;
 const sensitivity = 75;
 
-// Create SVG
 const svg = d3.select("#globe")
     .attr("width", width)
     .attr("height", height);
 
-// Create projection
 const projection = d3.geoOrthographic()
     .scale(350)
     .center([0, 0])
     .rotate([0, -30])
     .translate([width / 2, height / 2]);
-
-const initialScale = projection.scale();
+projection.scale();
 const path = d3.geoPath().projection(projection);
 
-// Create graticule
 const graticule = d3.geoGraticule();
 
 // Add sphere (ocean)
@@ -27,7 +23,6 @@ const sphere = svg.append("path")
     .attr("class", "sphere")
     .attr("d", path);
 
-// Add graticule
 svg.append("path")
     .datum(graticule)
     .attr("class", "graticule")
@@ -43,7 +38,6 @@ const continentMapping = {
     "Oceania": ["AUS", "FJI", "KIR", "MHL", "FSM", "NRU", "NZL", "PLW", "PNG", "WSM", "SLB", "TON", "TUV", "VUT"]
 };
 
-// Reverse mapping: country code to continent
 const countryToContinent = {};
 for (const [continent, countries] of Object.entries(continentMapping)) {
     countries.forEach(code => {
@@ -74,11 +68,9 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
             rotateToCountry(d);
         });
 
-    // Create labels group
     svg.append("g")
         .attr("class", "labels");
 
-    // Populate dropdown
     const select = document.getElementById("country-select");
     const sortedCountries = countriesData
         .map(d => d.properties.name)
@@ -91,7 +83,6 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
         select.appendChild(option);
     });
 
-    // Handle country selection
     select.addEventListener("change", (event) => {
         const countryName = event.target.value;
         if (countryName) {
@@ -111,16 +102,11 @@ function rotateToCountry(country) {
     const countryCode = country.id;
     const continent = countryToContinent[countryCode];
 
-    // Activate sphere
     sphere.classed("active", true);
 
-    // Get centroid of the country
     const centroid = d3.geoCentroid(country);
-
-    // Calculate rotation to center the country
     const rotate = [-centroid[0], -centroid[1]];
 
-    // Animate rotation
     d3.transition()
         .duration(1500)
         .tween("rotate", () => {
@@ -133,7 +119,6 @@ function rotateToCountry(country) {
 }
 
 function updateGlobe(highlightContinent, selectedCountryCode) {
-    // Update country paths
     svg.selectAll(".country")
         .attr("d", path)
         .attr("class", d => {
@@ -149,11 +134,9 @@ function updateGlobe(highlightContinent, selectedCountryCode) {
             }
         });
 
-    // Update graticule
     svg.select(".graticule").attr("d", path);
     svg.select(".sphere").attr("d", path);
 
-    // Update labels
     updateLabels(highlightContinent, selectedCountryCode);
 }
 
@@ -166,19 +149,15 @@ function updateLabels(highlightContinent, selectedCountryCode) {
         return countryToContinent[code] === highlightContinent && code !== selectedCountryCode;
     });
 
-    // Bind data
     const labels = labelsGroup.selectAll(".country-label")
         .data(sameContinent, d => d.id);
 
-    // Remove old labels
     labels.exit().remove();
 
-    // Add new labels
     const newLabels = labels.enter()
         .append("text")
         .attr("class", "country-label");
 
-    // Update all labels
     labels.merge(newLabels)
         .text(d => d.properties.name)
         .attr("x", d => {
@@ -202,10 +181,8 @@ function updateLabels(highlightContinent, selectedCountryCode) {
 function resetGlobe() {
     selectedCountry = null;
 
-    // Deactivate sphere
     sphere.classed("active", false);
 
-    // Reset rotation
     d3.transition()
         .duration(1500)
         .tween("rotate", () => {
@@ -216,11 +193,9 @@ function resetGlobe() {
             };
         });
 
-    // Clear labels
     svg.select(".labels").selectAll(".country-label").remove();
 }
 
-// Optional: Add drag rotation
 const drag = d3.drag()
     .on("drag", (event) => {
         const rotate = projection.rotate();
