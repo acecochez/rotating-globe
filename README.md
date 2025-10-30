@@ -1,6 +1,7 @@
 # 🌍 Rotating Globe
 
-An interactive 3D globe visualization featuring smooth rotation animations and country labels.
+<img width="1898" height="901" alt="image" src="https://github.com/user-attachments/assets/05fd46b0-b682-48aa-8bb9-bc03f84a0d99" />
+
 
 ## Features
 
