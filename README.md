@@ -16,13 +16,8 @@
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/acecochez/rotating-globe.git
-cd rotating-globe
-```
-
-2. Open `index.html` in your web browser
+Watch my video tutorial on how to clone a repository! (The video uses this repo!)
+[View Tutorial](https://youtu.be/vWElEAbIWP8?si=bpoHl4SZxDuEx9g)
 
 ## Usage
 
