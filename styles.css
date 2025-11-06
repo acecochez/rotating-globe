@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a2e;
+    background: #1a2e25;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,9 +25,9 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: #03254E;
-    border: 2px solid #477998;
-    color: #fff;
+    background: #034e2e;
+    border: 2px solid #479867;
+    color: #479867;
     font-size: 0.9em;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -37,8 +37,8 @@ body {
 }
 
 .menu-button:hover {
-    background: #04305e;
-    border-color: #7DC95E;
+    background: #034e2e;
+    border-color: #479867;
     transform: scale(1.05);
 }
 
@@ -95,7 +95,7 @@ h1 {
     font-size: 3.5em;
     font-weight: 300;
     letter-spacing: 2px;
-    color: #477998;
+    color: #fff;
     text-shadow: none;
 }
 
@@ -119,7 +119,7 @@ h1 {
     display: block;
     font-size: 0.9em;
     margin-bottom: 10px;
-    color: #8fa3ad;
+    color: #479867;
     font-weight: 300;
     letter-spacing: 0.5px;
 }
@@ -129,7 +129,7 @@ h1 {
     font-size: 0.9em;
     border: 2px solid #477998;
     border-radius: 6px;
-    background: #03254E;
+    background: #479867;
     color: #fff;
     cursor: pointer;
     min-width: 220px;
@@ -195,7 +195,7 @@ h1 {
 }
 
 .sphere {
-    fill: #011a35;
+    fill: #478998;
     stroke: #477998;
     stroke-width: 2px;
     opacity: 0.6;
