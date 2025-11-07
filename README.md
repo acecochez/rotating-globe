@@ -12,12 +12,8 @@
 
 ## 🚀 Demo
 
-[View Live Demo](https://acecochez.github.io/rotating-globe/)
-
-## Installation
-
-Watch my video tutorial on how to clone a repository! (The video uses this repo!)
-[View Tutorial](https://youtu.be/vWElEAbIWP8?si=bpoHl4SZxDuEx9g)
+[Try the App](https://acecochez.github.io/rotating-globe/)
+[Watch the Demo](https://youtu.be/HgsnPCUf7Ms?si=hd_r-Gk5i1PGD0El)
 
 ## Usage
 
@@ -25,13 +21,13 @@ Watch my video tutorial on how to clone a repository! (The video uses this repo!
 - **Zoom**: Scroll up/down or pinch on mobile
 - **View Country**: Hover over or click on countries for labels
 - **Auto-rotation**: Globe automatically rotates when not being interacted with
+  
+## Installation
+
+Watch my video tutorial on how to clone a repository! (The video uses this repo!)
+[View Tutorial](https://youtu.be/vWElEAbIWP8?si=bpoHl4SZxDuEx9g)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Watch my video tutorial on how to contribute to a repository! (The video uses this repo!)
+[View Tutorial](https://youtu.be/rEj5Gz0Cbu8?si=2Ks6ppuAtQHZUUUq)
